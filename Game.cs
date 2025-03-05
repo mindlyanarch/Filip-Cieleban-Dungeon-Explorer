@@ -8,17 +8,19 @@ namespace DungeonExplorer
         private Player player;
         private Room currentRoom;
         private Sword rustySword;
+
         public Game()
         {
             // Initialize the game with one room and one player
             player = new("Hero", 100);
-            currentRoom = new("Entrance Hall", "Test");
+            currentRoom = new EntranceRoom();
 
 
             //temporary items for testing
 
-            Sword rustySword = new("Rusty Sword", "This has been here a long time...", 5);
-            currentRoom.inventory.Add(rustySword);
+            rustySword = new("Rusty Sword", "This has been here a long time...", 5);
+            currentRoom.Inventory.Add(rustySword);
+
         }
         public void Start()
         {
@@ -27,11 +29,12 @@ namespace DungeonExplorer
             while (playing)
             {
                 // Code your playing logic here
-            
+
+                Console.WriteLine("It's cold in here...");
 
                 Console.WriteLine("Type 'look' to check where you are, or 'exit' to quit.");
                 Console.WriteLine("Type 'Inventory' to check your bag, or 'Pickup' to grab an item");
-                string? input = Console.ReadLine()?.ToLower();
+                string input = Console.ReadLine()?.ToLower();
 
                 if (input == "look")
                 {
@@ -48,6 +51,10 @@ namespace DungeonExplorer
                 else if (input == "exit")
                 {
                     break;
+                }
+                else
+                {
+                    Console.WriteLine("That doesn't seem to be a valid command, try again:");
                 }
 
             }

@@ -2,18 +2,45 @@
 
 namespace DungeonExplorer
 {
-    public class Room
+   
+        public abstract class Room
     {
-        public string Name { get; private set; }
-        public string Description { get; private set; }
+        public int Id { get; set; }
+        public string Description { get; set; }
+        public string Name { get; set; }
 
-        public List<GameItems> inventory = new List<GameItems>();
+        public List<GameItems> Inventory = new();
 
-        public Room(string name, string description)
+        public Room()
         {
-            this.Name = name;
-            this.Description = description;
-            
+            Name = "The Void";
+            Description = "You shouldn't be here.";
+
         }
     }
+
+    public class EmptyRoom : Room
+    {
+        public EmptyRoom()
+        {
+            Name = "An empty Room";
+            Description = "One of many, there doesn't seem to be anything notable here.";
+
+        }
+
+
+    }
+    public class EntranceRoom : Room
+    {
+        public EntranceRoom()
+        {
+            Id = 001;
+            Name = "Entrance Hall";
+            Description = "Behind you lies a massive stone gate. There is no return.";
+
+        }
+
+
+    }
+
 }
