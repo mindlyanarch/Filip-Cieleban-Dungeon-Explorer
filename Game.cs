@@ -7,13 +7,18 @@ namespace DungeonExplorer
     {
         private Player player;
         private Room currentRoom;
-
+        private Sword rustySword;
         public Game()
         {
             // Initialize the game with one room and one player
             player = new("Hero", 100);
             currentRoom = new("Entrance Hall", "Test");
 
+
+            //temporary items for testing
+
+            Sword rustySword = new("Rusty Sword", "This has been here a long time...", 5);
+            currentRoom.inventory.Add(rustySword);
         }
         public void Start()
         {
