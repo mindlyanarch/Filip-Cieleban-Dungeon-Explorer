@@ -56,25 +56,15 @@ namespace DungeonExplorer
                 //check if room has adjacency
 
                  int Coords = Map[currentRoom];
-                Dictionary<string, int> Cardinality = new();
-
-                Cardinality.Add("North", 1);
-                Cardinality.Add("East", 10);
-                Cardinality.Add("South", -1);
-                Cardinality.Add("West", -10);
 
 
-                for (int i = 0; i < 4; i++)
+                if (Map.Values.Contains(Coords + 10))
                 {
-
-                    if (Map.Values.Contains(Coords + Cardinality.Values.ElementAt(i)))
-                    {
-                        Console.WriteLine("There is a room to your {0}", Cardinality.Keys.ElementAt(i));
-                    }
-                    else
-                    {
-                        Console.WriteLine("There is nothing to your {0}", Cardinality.Keys.ElementAt(i));
-                    }
+                    Console.WriteLine("There is a room to your right");
+                }
+                else
+                {
+                    Console.WriteLine("There is nothing to your right");
                 }
 
             }
