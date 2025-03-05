@@ -9,12 +9,11 @@ namespace DungeonExplorer
     {
         private Playable.Player player;
 
-        private Room currentRoom;
         private EntranceRoom entranceRoom;
         private EmptyRoom room1;
 
         private Sword rustySword;
-        private List<List<Room>> Map;
+        public Dictionary<Room, int> Map;
         public Game()
         {
             // Initialize the game with one room and one player
@@ -29,17 +28,12 @@ namespace DungeonExplorer
             entranceRoom.Inventory.Add(rustySword);
 
             //Initialize map matrix
-            // Map[0] 
-            // Map[1]
-            // Map[2] - Entrance Room [0] - Empty Room [1] 
+            //Dictionary with (Room, [XY]) convention
 
-            Map = new();
-            Map.Add(new List<Room>());
-            Map.Add(new List<Room>());
-            Map.Add(new List<Room>());
+           Map = new();
 
-            Map[2].Add(entranceRoom);
-            Map[2].Add(room1);
+            Map.Add(entranceRoom,10);
+            Map.Add(room1,20);
 
 
         }
@@ -50,8 +44,6 @@ namespace DungeonExplorer
             while (playing)
             {
                 // Code your playing logic here
-                foreach (var item in Map[0])
-                { Console.WriteLine(item); }
 
                 Console.WriteLine("It's cold in here...");
 
@@ -61,7 +53,7 @@ namespace DungeonExplorer
 
                 if (input == "look")
                 {
-                    player.Look();
+                    player.Look(Map);
                 }
                 else if (input == "pickup")
                 {

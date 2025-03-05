@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using static DungeonExplorer.Playable;
 
 namespace DungeonExplorer
 {
@@ -26,10 +28,15 @@ namespace DungeonExplorer
                 return string.Join(", ", inventory);
             }
 
-            public void Look()
+            public void Look(Dictionary<Room, int> Map)
             {
+                //display room fluff
+
                 Console.WriteLine("This room is " + currentRoom.Name);
                 Console.WriteLine(currentRoom.Description);
+
+                //check if room has items
+
                 if (currentRoom.Inventory.Count == 0)
                 {
                     Console.WriteLine("There's nothing here");
@@ -45,6 +52,21 @@ namespace DungeonExplorer
                         Console.WriteLine(item.Name);
                     }
                 }
+
+                //check if room has adjacency
+
+                 int Coords = Map[currentRoom];
+
+
+                if (Map.Values.Contains(Coords + 10))
+                {
+                    Console.WriteLine("There is a room to your right");
+                }
+                else
+                {
+                    Console.WriteLine("There is nothing to your right");
+                }
+
             }
 
             public void CheckInventory()
@@ -106,6 +128,11 @@ namespace DungeonExplorer
                     }
 
                 }
+            }
+
+            public void Move()
+            {
+
             }
         }
     }

@@ -5,7 +5,7 @@ namespace DungeonExplorer
    
         public abstract class Room
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public string Description { get; set; }
         public string Name { get; set; }
 
@@ -34,7 +34,7 @@ namespace DungeonExplorer
     {
         public EntranceRoom()
         {
-            Id = 001;
+            
             Name = "Entrance Hall";
             Description = "Behind you lies a massive stone gate. There is no return.";
 
