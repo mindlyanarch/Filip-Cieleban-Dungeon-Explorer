@@ -8,26 +8,25 @@ namespace DungeonExplorer
     {
         public class Player : Creatures.Creature
         {
+         
 
             private List<GameItems> inventory = new List<GameItems>();
 
-            public Player(string name, int health)
+            public Player(string name, int health, Room location) : base(location)
             {
+                currentRoom = location;
+
                 Name = name;
                 Description = "You've seen better days.";
                 MAXHP = health;
                 HP = health;
-            }
-            public void PickUpItem(string item)
-            {
-
             }
             public string InventoryContents()
             {
                 return string.Join(", ", inventory);
             }
 
-            public void Look(Room currentRoom)
+            public void Look()
             {
                 Console.WriteLine("This room is " + currentRoom.Name);
                 Console.WriteLine(currentRoom.Description);
@@ -68,7 +67,7 @@ namespace DungeonExplorer
                 }
             }
 
-            public void PickUpItem(Room currentRoom)
+            public void PickUpItem()
             {
                 //example of guard clause
                 //exits early to prevent null error

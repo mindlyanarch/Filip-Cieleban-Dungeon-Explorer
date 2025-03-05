@@ -15,12 +15,14 @@ namespace DungeonExplorer
             public string Description { get; set; }
             public int MAXHP { get; set; }
             public int HP { get; set; }
+            
+            public Room currentRoom { get; set; }
 
-            public Creature()
+            public Creature(Room location)
             {
                 Name = "Creature";
                 Description = "This shouldn't exist.";
-
+                this.currentRoom = location;
             }
         }
     }
