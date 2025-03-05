@@ -30,11 +30,20 @@ namespace DungeonExplorer
             
 
                 Console.WriteLine("Type 'look' to check where you are, or 'exit' to quit.");
+                Console.WriteLine("Type 'Inventory' to check your bag, or 'Pickup' to grab an item");
                 string? input = Console.ReadLine()?.ToLower();
 
                 if (input == "look")
                 {
                     player.Look(currentRoom);
+                }
+                else if (input == "pickup")
+                {
+                    player.PickUpItem(currentRoom);
+                }
+                else if (input == "inventory")
+                {
+                    player.CheckInventory();
                 }
                 else if (input == "exit")
                 {

@@ -11,6 +11,7 @@ namespace DungeonExplorer
         public string Name { get; set; }
         public string Description { get; set; }
 
+
     public GameItems()
         { 
            
@@ -26,6 +27,7 @@ namespace DungeonExplorer
         {
             Name = name;
             Description = description;
+
 
             Damage = damage;
 
