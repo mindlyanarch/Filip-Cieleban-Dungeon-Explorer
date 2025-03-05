@@ -33,7 +33,7 @@ namespace DungeonExplorer
                 Console.WriteLine("It's cold in here...");
 
                 Console.WriteLine("Type 'look' to check where you are, or 'exit' to quit.");
-                Console.WriteLine("Type 'Inventory' to check your bag, or 'Pickup' to grab an item");
+                Console.WriteLine("Type 'inventory' to check your bag, or 'Pickup' to grab an item");
                 string input = Console.ReadLine()?.ToLower();
 
                 if (input == "look")
