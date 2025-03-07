@@ -128,9 +128,6 @@ namespace DungeonExplorer
                 }
             }
 
-            public void Move()
-            {
 
-            }
         }
     }
