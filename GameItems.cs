@@ -20,7 +20,9 @@ namespace DungeonExplorer
 
     public class Sword : GameItems
     {
-        public int Damage { get; set; }
+        private int Damage { get; set; }
+        public int damage { get { return Damage; } }
+
         public bool Equippable = true;
 
         public Sword(string name, string description, int damage)
