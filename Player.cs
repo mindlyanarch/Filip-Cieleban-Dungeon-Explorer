@@ -29,23 +29,9 @@ namespace DungeonExplorer
                 Console.WriteLine("This room is " + currentRoom.Name);
                 Console.WriteLine(currentRoom.Description);
 
-                //check if room has items
+             //check if room has items
 
-                if (currentRoom.Inventory.Count == 0)
-                {
-                    Console.WriteLine("There's nothing here");
-
-                }
-                else
-                {
-                    Console.WriteLine("This room contains:");
-
-                    foreach (GameItems item in currentRoom.Inventory)
-                    {
-                        Console.Write(currentRoom.Inventory.IndexOf(item) + 1 + ". ");
-                        Console.WriteLine(item.Name);
-                    }
-                }
+             currentRoom.GetContents();
 
                 //check if room has adjacency
 

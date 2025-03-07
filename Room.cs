@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace DungeonExplorer
 {
@@ -16,6 +17,24 @@ namespace DungeonExplorer
             Name = "The Void";
             Description = "You shouldn't be here.";
 
+        }
+        public void GetContents()
+        {
+            if (this.Inventory.Count == 0)
+            {
+                Console.WriteLine("There's nothing here");
+
+            }
+            else
+            {
+                Console.WriteLine("This room contains:");
+
+                foreach (GameItems item in this.Inventory)
+                {
+                    Console.Write(this.Inventory.IndexOf(item) + 1 + ". ");
+                    Console.WriteLine(item.Name);
+                }
+            }
         }
     }
 
