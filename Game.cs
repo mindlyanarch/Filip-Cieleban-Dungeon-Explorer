@@ -22,7 +22,11 @@ namespace DungeonExplorer
             entranceRoom = new();
             room1 = new();
 
-            player = new("Hero", 100, entranceRoom);
+            Console.WriteLine("What is your name?");
+            string input = Console.ReadLine();
+            player = new(input, 100, entranceRoom);
+
+
             //temporary items for testing
 
             Sword rustySword = new("Rusty Sword", "This has been here a long time...", 5);
