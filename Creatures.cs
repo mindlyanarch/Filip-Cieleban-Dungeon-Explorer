@@ -10,11 +10,11 @@ namespace DungeonExplorer
     {
         public abstract class Creature
         {
-            public int Id { get; set; }
-            public string Name { get; set; }
-            public string Description { get; set; }
-            public int MAXHP { get; set; }
-            public int HP { get; set; }
+            private int ID { get; set; }
+            public string Name { get; private set; }
+            public string Description { get; private set; }
+            private int MAXHP { get; set; }
+            public int HP { get; private set; }
             
             public Room currentRoom { get; set; }
 
