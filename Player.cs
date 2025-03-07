@@ -21,10 +21,6 @@ namespace DungeonExplorer
                 MAXHP = health;
                 HP = health;
             }
-            public string InventoryContents()
-            {
-                return string.Join(", ", inventory);
-            }
 
             public void Look(Dictionary<Room, int> Map)
             {
