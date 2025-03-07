@@ -10,7 +10,7 @@ namespace DungeonExplorer
     {
         public class Player : Creatures.Creature
         {
-         
+
 
             private List<GameItems> inventory = new List<GameItems>();
 
@@ -55,7 +55,7 @@ namespace DungeonExplorer
 
                 //check if room has adjacency
 
-                 int Coords = Map[currentRoom];
+                int Coords = Map[currentRoom];
 
 
                 if (Map.Values.Contains(Coords + 10))

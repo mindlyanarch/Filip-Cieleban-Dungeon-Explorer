@@ -10,13 +10,13 @@ namespace DungeonExplorer
     {
         public abstract class Creature
         {
-            private int ID { get; set; }
-            public string Name { get; private set; }
-            public string Description { get; private set; }
-            private int MAXHP { get; set; }
-            public int HP { get; private set; }
-            
-            public Room currentRoom { get; set; }
+            protected int ID { get; set; }
+            protected string Name { get; set; }
+            protected string Description { get; set; }
+            protected int MAXHP { get; set; }
+            protected int HP { get; set; }
+
+            protected Room currentRoom { get; set; }
 
             public Creature(Room location)
             {
@@ -25,5 +25,8 @@ namespace DungeonExplorer
                 this.currentRoom = location;
             }
         }
+
+
+
     }
 }
