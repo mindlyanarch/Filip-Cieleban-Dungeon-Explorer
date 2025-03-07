@@ -2,13 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using static DungeonExplorer.Playable;
 
 namespace DungeonExplorer
 {
-    internal class Playable
-    {
-        public class Player : Creatures.Creature
+
+        internal class Player : Creatures.Creature
         {
 
 
@@ -136,4 +134,3 @@ namespace DungeonExplorer
             }
         }
     }
-}

@@ -8,7 +8,7 @@ namespace DungeonExplorer
 {
     internal class Game
     {
-        private Creatures.player;
+        private Player player;
 
         private EntranceRoom entranceRoom;
         private EmptyRoom room1;
