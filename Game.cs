@@ -13,7 +13,7 @@ namespace DungeonExplorer
         private EntranceRoom entranceRoom;
         private EmptyRoom room1;
 
-        private Sword rustySword;
+
         public Dictionary<Room, int> Map;
         public Game()
         {
@@ -25,7 +25,7 @@ namespace DungeonExplorer
             player = new("Hero", 100, entranceRoom);
             //temporary items for testing
 
-            rustySword = new("Rusty Sword", "This has been here a long time...", 5);
+            Sword rustySword = new("Rusty Sword", "This has been here a long time...", 5);
             entranceRoom.Inventory.Add(rustySword);
 
             //Initialize map matrix
