@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 
 namespace DungeonExplorer
@@ -8,6 +9,7 @@ namespace DungeonExplorer
 
         internal class Player : Creatures.Creature
         {
+         //Debug Checks:
 
 
             private List<GameItems> inventory = new List<GameItems>();
@@ -20,7 +22,12 @@ namespace DungeonExplorer
                 Description = "You've seen better days.";
                 MAXHP = health;
                 HP = health;
+                Debug.Assert(Name != null);
+                Debug.Assert(HP != 0 && MAXHP != 0);
+
             }
+        
+
 
             public void Look(Dictionary<Room, int> Map)
             {
@@ -29,9 +36,9 @@ namespace DungeonExplorer
                 Console.WriteLine("This room is " + currentRoom.Name);
                 Console.WriteLine(currentRoom.Description);
 
-             //check if room has items
+                //check if room has items
 
-             currentRoom.GetContents();
+                currentRoom.GetContents();
 
                 //check if room has adjacency
 

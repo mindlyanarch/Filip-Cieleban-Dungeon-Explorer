@@ -8,39 +8,50 @@ namespace DungeonExplorer
 {
     internal class Game
     {
+
+        //Declare objects:
+
+        //player
         private Player player;
 
+        //Rooms
         private EntranceRoom entranceRoom;
         private EmptyRoom room1;
 
-
+        //Map
         public Dictionary<Room, int> Map;
+
+        public Testing testing;
+
         public Game()
         {
-            // Initialize the game with one room and one player
+            // Initialize Objects:
 
+            //Player
+            Console.WriteLine("What is your name?");
+            string input = Console.ReadLine();
+
+            
+
+            //Rooms
             entranceRoom = new();
             room1 = new();
 
-            Console.WriteLine("What is your name?");
-            string input = Console.ReadLine();
             player = new(input, 100, entranceRoom);
-
-
             //temporary items for testing
 
-            Sword rustySword = new("Rusty Sword", "This has been here a long time...", 5);
-            entranceRoom.Inventory.Add(rustySword);
+            //Sword rustySword = new("Rusty Sword", "This has been here a long time...", 5);
+            //entranceRoom.Inventory.Add(rustySword);
 
             //Initialize map matrix
             //Dictionary with (Room, [XY]) convention
 
-           Map = new();
+            Map = new();
 
             Map.Add(entranceRoom,10);
             Map.Add(room1,20);
 
-
+            testing = new Testing();
         }
         public void Start()
         {
@@ -48,7 +59,8 @@ namespace DungeonExplorer
             bool playing = true;
             while (playing)
             {
-                // Code your playing logic here
+                //Debug checks:
+                
 
                 Console.WriteLine("It's cold in here...");
 
@@ -68,6 +80,10 @@ namespace DungeonExplorer
                 {
                     player.CheckInventory();
                 }
+                else if (input == "debug")
+                {
+                    testing.DebugMenu(this);
+                }
                 else if (input == "exit")
                 {
                     break;
@@ -78,6 +94,11 @@ namespace DungeonExplorer
                 }
 
             }
+        }
+
+        public Player GetPlayer()
+        {
+            return this.player;
         }
     }
 }
